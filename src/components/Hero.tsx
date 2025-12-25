@@ -40,11 +40,12 @@ export default function Hero() {
             Computer Science Engineer <span className="text-cyan-400">|</span> IIT Patna
           </h2>
 
-          <p className="text-slate-400 max-w-xl mb-8 leading-relaxed">
-            Strong foundation in algorithms, graph theory, and machine learning.
-            Experienced in building efficient, data-driven systems with real
-            performance guarantees.
-          </p>
+         <p className="text-slate-400 max-w-xl mb-8 leading-relaxed">
+  Computer Science undergraduate at IIT Patna with strong foundations in
+  algorithms, data structures, and machine learning. Experienced in building
+  efficient systems and applying theoretical concepts to real-world problems.
+</p>
+
 
           <div className="flex gap-6 mb-6">
             <Social href="https://github.com/vikasreddy1308-ops">

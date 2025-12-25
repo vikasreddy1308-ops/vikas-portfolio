@@ -7,16 +7,16 @@ const Projects = () => {
     {
       title: "Emergency Facility Coverage and Routing System",
       description:
-        "Graph-based system modeling a city-scale road network to analyze emergency response coverage. Implemented multi-source shortest-path algorithms to identify underserved regions and optimize facility placement, achieving ~30% reduction in worst-case response delay.",
-      tech: "C++, STL, Graph Algorithms",
+        "Designed and implemented a graph-based system to model a city-scale road network for emergency response planning. Applied multi-source shortest path algorithms to analyze coverage gaps, identify underserved regions, and evaluate facility placement strategies, achieving an estimated 30% reduction in worst-case response time.",
+      tech: "C++, STL, Graph Algorithms, Shortest Paths",
       github: "https://github.com/vikasreddy1308-ops/emergency-routing-system",
       image: routingImg,
     },
     {
       title: "Student Performance & Dropout Risk Prediction",
       description:
-        "Machine learning models built on academic and attendance data to predict student dropout risk. Achieved ~93% accuracy with ROC-AUC up to 0.94, supported by cross-validation and feature importance analysis.",
-      tech: "Python, Pandas, NumPy, Scikit-learn",
+        "Built and evaluated machine learning models using academic, attendance, and assessment data to predict student dropout risk. Achieved approximately 93% classification accuracy with ROC-AUC up to 0.94, supported by cross-validation and feature importance analysis to interpret key risk factors.",
+      tech: "Python, Pandas, NumPy, Scikit-learn, Machine Learning",
       github: "https://github.com/vikasreddy1308-ops/student-dropout-prediction",
       image: dropoutImg,
     },
@@ -37,13 +37,14 @@ const Projects = () => {
             >
               <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
                 
-                {/* IMAGE CONTAINER */}
+                {/* IMAGE */}
                 <div className="w-full">
                   <div className="aspect-[16/10] rounded-xl overflow-hidden bg-slate-800/40 p-2">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover rounded-lg"
+                      loading="lazy"
                     />
                   </div>
                 </div>

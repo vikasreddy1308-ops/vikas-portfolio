@@ -21,7 +21,7 @@ const CompetitiveProgramming = () => {
                   Codeforces
                 </h3>
                 <p className="text-slate-400">
-                  Competitive Programming Platform
+                  Competitive programming and algorithmic problem solving
                 </p>
               </div>
             </div>
@@ -38,28 +38,37 @@ const CompetitiveProgramming = () => {
           </div>
 
           {/* STATS */}
-          <div className="grid sm:grid-cols-3 gap-6 mb-8">
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
             <StatCard
               icon={<Code2 size={22} />}
               label="Current Rating"
               value="1542"
-              sub="Specialist"
+              sub="Specialist (Codeforces)"
             />
 
             <StatCard
               icon={<Code2 size={22} />}
               label="Problems Solved"
               value="180+"
-              sub="Across topics"
+              sub="Across multiple difficulty levels"
             />
 
             <StatCard
               icon={<Code2 size={22} />}
-              label="Primary Focus"
+              label="Primary Strength"
               value="Algorithms"
-              sub="Core CS"
+              sub="Core problem-solving skills"
             />
           </div>
+
+          {/* DESCRIPTION */}
+          <p className="text-slate-400 leading-relaxed mb-8">
+            Regularly participate in competitive programming contests with a
+            focus on strengthening algorithmic thinking, implementation speed,
+            and correctness under time constraints. Competitive programming has
+            played a key role in developing strong analytical and debugging
+            skills.
+          </p>
 
           {/* FOCUS AREAS */}
           <div>
@@ -69,8 +78,8 @@ const CompetitiveProgramming = () => {
 
             <div className="flex flex-wrap gap-3">
               {[
-                "Graphs",
-                "Greedy Algorithms",
+                "Graph Algorithms",
+                "Greedy Techniques",
                 "Binary Search",
                 "Dynamic Programming",
               ].map((topic) => (
