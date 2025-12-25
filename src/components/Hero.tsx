@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react";
 import profile from "../assets/vikas.jpg";
 
 export default function Hero() {
@@ -45,6 +45,22 @@ export default function Hero() {
   algorithms, data structures, and machine learning. Experienced in building
   efficient systems and applying theoretical concepts to real-world problems.
 </p>
+
+
+ {/* ACTION BUTTONS */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            {/* VIEW RESUME */}
+            <a
+              href="/Vikas_Reddy_Meka_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-900 font-medium hover:opacity-90 transition"
+            >
+              <FileText size={20} />
+              View Resume
+            </a>
+          </div>
+
 
 
           <div className="flex gap-6 mb-6">
