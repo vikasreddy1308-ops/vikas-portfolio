@@ -1,100 +1,78 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from "lucide-react";
+import routingImg from "../assets/emergency-routing.jpg";
+import dropoutImg from "../assets/student-dropout-ml.jpg";
 
 const Projects = () => {
   const projects = [
-  {
-    title: 'Lasy – Study & Material Portal',
-    description:
-      'A web-based portal for students to access and upload study materials, notes, and PYQs organized by year and course. Built with focus on ease of use, client-side filtering, and secure upload flows.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'JavaScript'],
-    image: 'https://images.pexels.com/photos/278941/pexels-photo-278941.jpeg?auto=compress&cs=tinysrgb&w=800',
-    github: 'https://github.com/yourusername/lasyplatform',
-    live: 'https://lasyplatform.web.app',
-    gradient: 'from-teal-500 to-blue-500',
-  },
-  {
-    title: 'Global Tech Conference 2025 Website',
-    description:
-      'Developed a fully responsive informational and registration website for a major industry conference with multi-track sessions, speaker profiles, and dynamic agenda filtering — emphasizing accessibility and performance.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Node.js', 'REST API'],
-    image: 'https://images.pexels.com/photos/3184631/pexels-photo-3184631.jpeg?auto=compress&cs=tinysrgb&w=800',
-    github: 'https://github.com/yourusername/conference-website',
-    live: 'https://conference.yourdomain.com',
-    gradient: 'from-indigo-500 to-purple-500',
-  },
-];
-
+    {
+      title: "Emergency Facility Coverage and Routing System",
+      description:
+        "Graph-based system modeling a city-scale road network to analyze emergency response coverage. Implemented multi-source shortest-path algorithms to identify underserved regions and optimize facility placement, achieving ~30% reduction in worst-case response delay.",
+      tech: "C++, STL, Graph Algorithms",
+      github: "https://github.com/vikasreddy1308-ops/emergency-routing-system",
+      image: routingImg,
+    },
+    {
+      title: "Student Performance & Dropout Risk Prediction",
+      description:
+        "Machine learning models built on academic and attendance data to predict student dropout risk. Achieved ~93% accuracy with ROC-AUC up to 0.94, supported by cross-validation and feature importance analysis.",
+      tech: "Python, Pandas, NumPy, Scikit-learn",
+      github: "https://github.com/vikasreddy1308-ops/student-dropout-prediction",
+      image: dropoutImg,
+    },
+  ];
 
   return (
-    <section id="projects" className="py-20 px-4 relative">
+    <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full" />
-        </div>
+        <h2 className="text-4xl font-bold mb-14 text-cyan-400 text-center">
+          Projects
+        </h2>
 
-        <div className="space-y-12">
-          {projects.map((project, index) => (
+        <div className="space-y-14">
+          {projects.map((project) => (
             <div
-              key={index}
-              className="group relative"
+              key={project.title}
+              className="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 sm:p-6"
             >
-              <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-10 rounded-2xl blur-2xl transition-opacity duration-500`} />
-
-              <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-400/50 transition-all duration-300">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="relative overflow-hidden h-48 sm:h-64 md:h-auto">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+                
+                {/* IMAGE CONTAINER */}
+                <div className="w-full">
+                  <div className="aspect-[16/10] rounded-xl overflow-hidden bg-slate-800/40 p-2">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover rounded-lg"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-20`} />
-                  </div>
-
-                  <div className="p-6 md:p-8 flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-slate-400 mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-slate-800/50 border border-slate-700 rounded-lg text-xs text-slate-300"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 text-sm"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>Code</span>
-                      </a>
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${project.gradient} rounded-lg hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 text-sm font-medium`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
-                      </a>
-                    </div>
                   </div>
                 </div>
+
+                {/* CONTENT */}
+                <div className="flex flex-col justify-center px-1 sm:px-2">
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-slate-400 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <p className="text-sm text-cyan-400 mb-6">
+                    {project.tech}
+                  </p>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 w-fit px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition"
+                  >
+                    <Github size={18} />
+                    View Code
+                  </a>
+                </div>
+
               </div>
             </div>
           ))}

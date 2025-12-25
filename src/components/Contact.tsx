@@ -17,7 +17,7 @@ const Contact = () => {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://formspree.io/f/mlgrrvlv", {
+      const response = await fetch("https://formspree.io/f/xeejbbkr", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,10 +79,10 @@ const Contact = () => {
               title="Email"
               content={
                 <a
-                  href="mailto:tharunthirupathi55@gmail.com"
+                  href="mailto:vikasreddy1308@gmail.com"
                   className="text-slate-400 hover:text-cyan-400 transition-colors"
                 >
-                  tharunthirupathi55@gmail.com
+                  vikasreddy1308@gmail.com
                 </a>
               }
             />

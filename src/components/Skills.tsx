@@ -1,69 +1,75 @@
-import { Code, Database, Layout, Zap } from 'lucide-react';
+import { Code2, Network, Brain, Wrench } from "lucide-react";
 
 const Skills = () => {
-  const skillCategories = [
+  const skills = [
     {
-      title: 'Frontend Development',
-      icon: Layout,
-      skills: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vue.js'],
-      color: 'from-cyan-500 to-blue-500',
+      title: "Programming Languages",
+      icon: Code2,
+      items: ["C++", "C", "Python"],
     },
     {
-      title: 'Backend Development',
-      icon: Database,
-      skills: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'REST APIs'],
-      color: 'from-blue-500 to-indigo-500',
+      title: "Data Structures & Algorithms",
+      icon: Network,
+      items: [
+        "Graphs",
+        "Dynamic Programming",
+        "Greedy Algorithms",
+        "BFS / DFS / Dijkstra",
+      ],
     },
     {
-      title: 'Programming Languages',
-      icon: Code,
-      skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
-      color: 'from-indigo-500 to-purple-500',
+      title: "Machine Learning",
+      icon: Brain,
+      items: [
+        "Logistic Regression",
+        "Random Forest",
+        "Model Evaluation",
+        "Cross Validation",
+      ],
     },
     {
-      title: 'Tools & Technologies',
-      icon: Zap,
-      skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Agile'],
-      color: 'from-purple-500 to-pink-500',
+      title: "Tools & Environment",
+      icon: Wrench,
+      items: ["Linux", "Git", "VS Code", "LaTeX"],
     },
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 relative">
+    <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Skills & Expertise
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full" />
-        </div>
+        <h2 className="text-4xl font-bold mb-14 text-cyan-400 text-center">
+          Skills
+        </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {skillCategories.map((category, index) => {
-            const Icon = category.icon;
+        <div className="grid md:grid-cols-2 gap-8">
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+
             return (
               <div
-                key={index}
-                className="group relative"
+                key={skill.title}
+                className="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 sm:p-7"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition-opacity duration-300`} />
-                <div className="relative bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`p-3 bg-gradient-to-r ${category.color} bg-opacity-10 rounded-lg`}>
-                      <Icon className="w-6 h-6 text-cyan-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-slate-200">{category.title}</h3>
+                {/* HEADER */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+                    <Icon size={22} />
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-3 py-1.5 bg-slate-800/50 border border-slate-700 rounded-lg text-sm text-slate-300 hover:border-cyan-400/50 hover:text-cyan-400 transition-all duration-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-xl font-semibold">
+                    {skill.title}
+                  </h3>
+                </div>
+
+                {/* SKILLS */}
+                <div className="flex flex-wrap gap-2">
+                  {skill.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1.5 text-sm rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300 hover:border-cyan-400/50 hover:text-cyan-400 transition"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             );
